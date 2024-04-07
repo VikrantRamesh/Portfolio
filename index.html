@@ -13,6 +13,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap" rel="stylesheet">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 		<!-- Google tag (gtag.js) -->
@@ -51,7 +52,20 @@
 								</div>
 							</nav>
 						</header>
-						
+					<div class="about">
+						<section  class="about">
+							<div class="container">
+								<div class="about-me-text animate">
+									<h2 style="font-family: Bebas Neue, sans-serif;letter-spacing: 2px;font-weight: 200;">About Me</h2>
+									<h4>I am an aspiring Computer Science student with a keen interest in the domain of Data Science and Machine Learning. I enjoy the process of building software solutions and predictive models to solve real-world problems. The process of integrating various domains of Computer Science to find solutions never fails to inspire me. I am looking forward to working in an data oriented	 environment where learning is a part of the work culture and hence allows me to gain more insights into various technologies of the current world.</h5>
+								</div>
+								<div class="about-me-image-container">
+									<a id="about-me-image-anchor" href="#about-me-image-anchor"></a>
+									<img class="about-me-image  animate" src="images/vikrant.png" alt="About Me Image">
+								  </div>
+							</div>
+						</section>
+					</div>	
 				<div id="main1">
 
 					<!-- One -->
@@ -120,19 +134,38 @@
 		</div>
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<script>
-			function scrollToMain() {
-				var mainSection = document.getElementById('main1');
-				var mainSectionOffset = mainSection.offsetTop;
+				document.addEventListener("DOMContentLoaded", () => {
 
-				window.scrollTo({
-					top: mainSectionOffset,
-					behavior: 'smooth'
+				const observer2 = new IntersectionObserver(entries => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting ) {
+						entry.target.classList.add('in-view');
+						observer2.unobserve(entry.target);
+					return;
+					}
 				});
-			}
+				}, { threshold: [0.3] });
 
-			window.onload = function() { document.body.classList.remove('is-preload'); }
-			window.ontouchmove = function() { return false; }
-			window.onorientationchange = function() { document.body.scrollTop = 0; }
+				// Use Intersection Observer to determine if objects are within the viewport
+				const observer = new IntersectionObserver(entries => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting ) {
+							entry.target.classList.add('in-view-text');
+							observer.unobserve(entry.target);
+					return;
+					}
+				});
+				}, { threshold: [0.3] });
+
+
+				
+				const allAnimatedElements2 = document.querySelectorAll('.animate.about-me-image');
+				const allAnimatedElements = document.querySelectorAll('.about-me-text.animate');
+
+				allAnimatedElements2.forEach((element) => observer2.observe(element));
+				allAnimatedElements.forEach((element) => observer.observe(element));
+				
+				});
 		</script>
 		
 		
