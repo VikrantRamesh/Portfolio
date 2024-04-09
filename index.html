@@ -8,6 +8,8 @@
 	<head>
 		<title>Vikrant Ramesh</title>
 		<meta charset="utf-8" />
+		<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+		<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +18,9 @@
 		<link href="https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	
+
+		
 
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
@@ -43,10 +48,10 @@
 				<div id="bg"></div>
 				<div id="overlay"></div>
 				
-				<div id="main">
+				<div id="main" class="y-scroll-snap">
 					
 					<!-- Header -->
-						<header id="header1">
+						<header id="header1" class="">
 							<div class ="parallax-fade-top">
 								
 								<h1 class="bebas" style="font-family: Bebas Neue, sans-serif;letter-spacing: 2px;font-weight: 300;">VIKRANT RAMESH</h1>
@@ -69,7 +74,12 @@
 							</div>
 						</header>
 					
-					<div class="about">
+					<div class="about y-scroll-align">
+							<section class='spacer '>
+								<h1 id="scrollingText"> 
+									Vikrant Ramesh Vikrant Ramesh Vikrant Ramesh Vikrant Ramesh Vikrant Ramesh Vikrant Ramesh Vikrant Ramesh Vikrant
+								</h1>
+							</section>
 							
 							<div class="container">
 								<div class="about-me-text animate">
@@ -115,7 +125,7 @@
 								
 						</div>
 					</div>
-				<div id="main1">
+				<div id="main1"  class=" ">
 					
 					<!-- One -->
 						<section id="one" class="tiles">
