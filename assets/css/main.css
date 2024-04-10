@@ -96,7 +96,7 @@
 				-webkit-transition: none !important;
 				-ms-transition: none !important;
 				transition: none !important;
-				overflow-y: auto;
+				overflow-y: hidden;
 			}
 
 		body, input, select, textarea {
@@ -373,8 +373,7 @@
 		#main {
 			height: 100%;
 			left: 0;
-			scroll-behavior: smooth;
-			position: fixed;
+			/* position: fixed; */
 			text-align: center;	
 			top: 0;
 			width: 100%;
@@ -559,6 +558,8 @@
 			vertical-align: middle;
 			width: 90%;
 			top:5%;
+			height:100vh;
+			margin:0 0 5rem 0;
 		}
 
 			#header1 h1 {
@@ -5150,6 +5151,7 @@ input, select, textarea {
   }
 
 .about-me-text {
+	position:relative;
 	width: 60%;
 	margin: auto 2rem;
 	text-align: center;
@@ -5196,32 +5198,13 @@ input, select, textarea {
 	justify-content: space-between;
 }
 
-
 .about{
-	margin: auto 0;
+	height: 100vh;
+	margin: 1rem 0 2rem;
 	padding:0 1rem; 
 	display: flex;
 	justify-content: center;
-	
-	margin-bottom:8rem;
 	color: black!important;
-}
-
-.y-scroll-align{
-	scroll-snap-align: center;
-}
-
-.y-scroll-snap {
-	overflow-y: scroll;
-	scroll-behavior:smooth;
-    scroll-snap-type: y proximity;
-	scroll-behavior: smooth;
-
-    touch-action: pan-y; 
-	scroll-padding: 50px 0 0 0;
-    scroll-margin: 50px; 
-    scroll-snap-stop: always; 
-
 }
 
 
@@ -5256,6 +5239,7 @@ input, select, textarea {
 	 letter-spacing: 3px;
 	 font-weight: 100;
 	  margin-bottom: 0;
+	  position:relative;
 }
 
 @media (max-width: 1580px){
@@ -5298,26 +5282,11 @@ input, select, textarea {
 
 @media (max-width: 1000px) {
 
-	.y-scroll-align{
-		scroll-snap-align: none;
-	}
 	
-	.y-scroll-snap {
-		overflow-y: scroll;
-		scroll-behavior:smooth;
-		scroll-snap-type: none;
-		scroll-behavior: smooth;
-	
-		touch-action: pan-y; 
-		scroll-padding: 50px 0 0 0;
-		scroll-margin: 50px; 
-		scroll-snap-stop: always; 
-	
-	}
-	
+/* 	
 	.spacer{
 		display:none!important;
-	  }
+	  } */
 
 	.about-me-image-container{
 		width:0;
@@ -5327,7 +5296,7 @@ input, select, textarea {
 	 }
 	 .about-me-text {
 		width: 100%;
-		height:100%;
+		/* height:100%; */
 		padding: 0.5rem 1rem 1rem;
 	}
 
@@ -5351,7 +5320,9 @@ input, select, textarea {
 		padding:0; 
 	}
 	.about-me-text {
+		
 		margin: 0;
+		height:50%;
 		padding: 3rem 1rem;
 		box-sizing: border-box;
 	}
@@ -5617,10 +5588,10 @@ input, select, textarea {
   }
   
 .parallax-fade-top{
+	margin-top:18%;
 	position:absolute;
 	width:100%;
-	top:0%;
-	transform: translate(0,-200px);
+	/* transform: translate(0,-200px); */
 }
 
 
@@ -5628,17 +5599,20 @@ input, select, textarea {
 	.parallax-fade-top{
 		position:absolute;
 		width:100%;
+		margin-top:30%;
 		top:0%;
-		transform: translate(0,-150px);
+		/* transform: translate(0,-150px); */
 	}	
 }
 
 @media (max-width: 728px) {
 	.parallax-fade-top{
 		position:absolute;
+		margin-top:40%;
 		width:100%;
 		top:0%;
-		transform: translate(0,-80px);
+
+		/* transform: translate(0,-80px); */
 	}	
 }
 
@@ -5712,7 +5686,7 @@ input, select, textarea {
   .spacer{
 	width:100vw;
 	position: absolute;
-	height:101vh;
+	height:20%;
 	display:flex;
 	justify-content:center;
 	align-items:center;
@@ -5726,7 +5700,7 @@ input, select, textarea {
 	color:transparent;
 	width:500vw;
 	font-size:5em;
-	transform: translateY(-15rem);
+	transform: translateY(-10rem);
 	font-weight:900;
 	font-family:'Raleway';
 	-webkit-text-stroke-width: 1px;
@@ -5777,3 +5751,47 @@ input, select, textarea {
       transform: translateX(100%);
     }
   }
+
+
+.welcome{
+	height: 100vh;
+}
+
+.scroll1,
+.scroll2,
+.scroll3,
+.scroll4,
+.scroll{
+  white-space: nowrap;
+}
+
+.scroll1{
+	top: 40vh;
+	position: relative;
+	color: white!important;
+}
+
+.scroll2{
+	top: 60vh;
+	position: relative;
+	color: white!important;
+}
+.scroll3{
+	top: 80vh;
+	position: relative;
+	color: white!important;
+}
+
+.scroll{
+	top: 30vh;
+	position: relative;
+}
+.scroll4{
+	top: 100vh;
+	position: relative;
+	color: white!important;
+}
+
+.scroll1, .scroll4{
+	right: 100vh;
+}
