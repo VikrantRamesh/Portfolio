@@ -5233,7 +5233,7 @@ input, select, textarea {
 }
 
 
-.experience > h2{
+.inner > span > h2{
 	font-size: 5rem;
 	 font-family: Bebas Neue, sans-serif;
 	 letter-spacing: 3px;
@@ -5352,7 +5352,6 @@ input, select, textarea {
 	display: flex;
 
 	justify-content: space-between;
-	
 	padding: 20px;
 	box-sizing: border-box;
 }
@@ -5363,9 +5362,11 @@ input, select, textarea {
 }
 
 
-
-
-
+/* 
+#curtain{
+	height: 300vh;
+}
+ */
 
 /////////////////////////////
 
@@ -5494,6 +5495,7 @@ input, select, textarea {
 	visibility: visible;
 	opacity: 1;
 	padding: 1rem 1.25rem;
+	z-index: 3;
   }
   
   
@@ -5794,4 +5796,94 @@ input, select, textarea {
 
 .scroll1, .scroll4{
 	right: 100vh;
+}
+
+
+
+.capsule {
+	background: radial-gradient(174.86% 134.88% at 129.03% 15.73%,#00bae2 0,#ffa9fa 11.29%,#fec5fb 46.35%,#00bae2 95.73%);
+	border-radius: 5rem/calc(5rem/var(--fy));
+	transform: scaleY(var(--fy));
+	position: absolute;
+	z-index: 10;
+	height:100%;
+	width:100%;
+	box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.2);
+}
+
+.scroll-smooth-effects__circle{
+	position: absolute;
+	width: 2rem;
+	height: 2rem;
+}
+
+
+
+
+/* testing */
+
+.cir {
+    height: 100vh;
+    grid-area: 1 / 1 / 2 / 2;
+    background-color: black;
+    clip-path: circle(100% at 50% 50%);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .cir2 {
+    height: 100vh;
+    grid-area: 1 / 1 / 2 / 2;
+    background-color: white;
+    clip-path: circle(100% at 50% 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+
+  
+  .spacer2 {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+  #container2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    /* align-items: center;
+    justify-items: center; */
+  }
+  .reveal{
+    height: 100vh;
+    grid-area: 1 / 1 / 2 / 2;
+    background-color: #040408;
+    clip-path: circle(100% at 50% 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .circle.reveal{
+	height: 150vh;
+	overflow:hidden;
+  }
+
+  section:nth-child(even) {
+    background-color: #0f0b25;
+	align-items: flex-start;
+  }
+
+.mar{
+	margin-top:20vh;
+	z-index:2;
 }
