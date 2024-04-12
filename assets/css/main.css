@@ -205,6 +205,8 @@
 			-ms-animation: wrapper 0s forwards;
 			animation: wrapper 0s forwards;
 			height: auto;
+			overflow-x:hidden;
+			scrollbar-width: none;
 			left: 0;
 			opacity: 0;
 			z-index: 1000;
@@ -371,6 +373,7 @@
 	/* Main */
 
 		#main {
+			scroll-behavior: smooth;
 			height: 100%;
 			left: 0;
 			/* position: fixed; */
@@ -5316,23 +5319,34 @@ input, select, textarea {
 
 
 @media (max-width: 600px) {
+	.reveal{
+		padding: 0 0 0 1rem;
+		justify-content: flex-start!important;
+	}
+	.inner > span > h2 {
+		font-size: 2rem;
+	}
+
+	.timeline ul li.in-view div {
+		width: 65vw;
+	}
 	.about{
 		padding:0; 
 	}
 	.about-me-text {
 		
 		margin: 0;
-		height:50%;
+		height:fit-content;
 		padding: 3rem 1rem;
 		box-sizing: border-box;
 	}
 	
 	.about h2{
-		font-size:1rem;
+		font-size:0.75rem;
 	}
 	
 	.about  h4{
-		font-size:0.5rem;	
+		font-size:1rem;	
 	}
 
 	.experience > h2{
@@ -5420,7 +5434,7 @@ input, select, textarea {
   .timeline ul li div::before {
 	content: "";
 	position: absolute;
-	bottom: 7px;
+	bottom: 17px;
 	width: 0;
 	height: 0;
 	border-style: solid;
@@ -5434,6 +5448,7 @@ input, select, textarea {
 	left: -15px;
 	border-width: 8px 16px 8px 0;
 	border-color: transparent #904eb9 transparent transparent;
+	
   }
   
   .timeline ul li:nth-child(even) div {
@@ -5482,6 +5497,8 @@ input, select, textarea {
 	transition: all 0.5s ease-in-out;
   }
   
+
+
   .timeline ul li:nth-child(odd) div {
 	transform: translate3d(200px, 0, 0);
   }
@@ -5491,6 +5508,8 @@ input, select, textarea {
   }
   
   .timeline ul li.in-view div {
+	box-shadow: 0 0 10px rgba(241, 241, 241, 0.3); 
+	border-radius: 1.5rem;
 	transform: none;
 	visibility: visible;
 	opacity: 1;
@@ -5756,7 +5775,7 @@ input, select, textarea {
 
 
 .welcome{
-	height: 100vh;
+	height: 120vh;
 }
 
 .scroll1,
@@ -5768,18 +5787,18 @@ input, select, textarea {
 }
 
 .scroll1{
-	top: 40vh;
+	top: 50vh;
 	position: relative;
 	color: white!important;
 }
 
 .scroll2{
-	top: 60vh;
+	top: 70vh;
 	position: relative;
 	color: white!important;
 }
 .scroll3{
-	top: 80vh;
+	top: 90vh;
 	position: relative;
 	color: white!important;
 }
@@ -5789,7 +5808,7 @@ input, select, textarea {
 	position: relative;
 }
 .scroll4{
-	top: 100vh;
+	top: 110vh;
 	position: relative;
 	color: white!important;
 }
@@ -5874,7 +5893,7 @@ input, select, textarea {
     width: 100%;
   }
   .circle.reveal{
-	height: 150vh;
+	height: fit-content;
 	overflow:hidden;
   }
 
@@ -5884,6 +5903,78 @@ input, select, textarea {
   }
 
 .mar{
-	margin-top:20vh;
+	margin:20vh 0;
 	z-index:2;
 }
+
+
+
+
+.scroll-smooth-effects__circle:nth-child(1) {
+	transform: translate3d(-25%, 10%, 0);
+  }
+  
+  .scroll-smooth-effects__circle:nth-child(2) {
+	transform: translate3d(-25%, 20%, 0);
+  }
+  
+
+  //locomotive
+
+	html.has-scroll-smooth {
+	overflow: hidden; }
+  
+  html.has-scroll-dragging {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none; }
+  
+  .has-scroll-smooth body {
+	overflow: hidden; }
+  
+  .has-scroll-smooth [data-scroll-container] {
+	min-height: 100vh; }
+  
+  /* .c-scrollbar {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 11px;
+	height: 100vh;
+	transform-origin: center right;
+	transition: transform 0.3s, opacity 0.3s;
+	opacity: 0; }
+	.c-scrollbar:hover {
+	  transform: scaleX(1.45); }
+	.c-scrollbar:hover, .has-scroll-scrolling .c-scrollbar, .has-scroll-dragging .c-scrollbar {
+	  opacity: 1; }
+  
+  .c-scrollbar_thumb {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: black;
+	opacity: 0.5;
+	width: 7px;
+	border-radius: 10px;
+	margin: 2px;
+	cursor: -webkit-grab;
+	cursor: grab; }
+	.has-scroll-dragging .c-scrollbar_thumb {
+	  cursor: -webkit-grabbing;
+	  cursor: grabbing; }
+ */
+
+	/* 
+		html, body {
+			margin: 0;  
+		}
+		
+		body {
+			font-family:sans-serif;
+			color:#333;
+			background:#efefef;
+			font-size:3vw;
+		}
+		*/
